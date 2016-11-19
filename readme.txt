@@ -31,8 +31,8 @@ Added an option where you can remove the footer credit texts. This option is fou
 
 Added the ability to create new pages when the Front page Sections are selected.
 Moved the front page section code from index.php to their own functions in functions.php:
-aaron_front_page_top_sections() and aaron_front_page_bottom_sections().
-Two new files where added for the front page sections, content-frontpage-top.php and content-frontpage-bottom.php.
+aaron_top_sections() and aaron_bottom_sections().
+Two new files where added for the front page sections, content-top.php and content-bottom.php.
 
 Added an additional class to the highlights (hl+ the number).
 HTML is now allowed in the highlights, this makes it possible to break the text into separate lines. 

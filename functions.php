@@ -434,9 +434,9 @@ function aaron_customize_css() {
 }
 add_action( 'wp_head', 'aaron_customize_css' );
 
-if ( ! function_exists( 'aaron_front_page_top_sections' ) ) {
+if ( ! function_exists( 'aaron_top_sections' ) ) {
 
-	function aaron_front_page_top_sections(){
+	function aaron_top_sections(){
 		/* The front page sections should not display on the blog listing page. */
 		if ( is_front_page() && is_home() ) {
 			if ( get_theme_mod( 'aaron_top_section1' ) || get_theme_mod( 'aaron_top_section2' ) || get_theme_mod( 'aaron_top_section3' ) ) {
@@ -454,7 +454,7 @@ if ( ! function_exists( 'aaron_front_page_top_sections' ) ) {
 
 		     	if ( $top_section_query->have_posts() ) {
 		     		while ( $top_section_query->have_posts() ) : $top_section_query->the_post();
-						get_template_part( 'content', 'frontpage-top' );
+						get_template_part( 'content', 'top' );
 					endwhile;
 					wp_reset_postdata();
 				}
@@ -463,8 +463,8 @@ if ( ! function_exists( 'aaron_front_page_top_sections' ) ) {
 	}
 }
 
-if ( ! function_exists( 'aaron_front_page_bottom_sections' ) ) {
-	function aaron_front_page_bottom_sections(){
+if ( ! function_exists( 'aaron_bottom_sections' ) ) {
+	function aaron_bottom_sections(){
 		/*
 		* We have finished printing the latest posts. Check if there are bottom section pages to show:
 		* The front page sections should not display on the blog listing page.
@@ -486,7 +486,7 @@ if ( ! function_exists( 'aaron_front_page_bottom_sections' ) ) {
 
 	     		if ( $bottom_section_query->have_posts() ) {
 		     		while ( $bottom_section_query->have_posts() ) : $bottom_section_query->the_post();
-						get_template_part( 'content', 'frontpage-bottom' );
+						get_template_part( 'content', 'bottom' );
 					endwhile;
 					wp_reset_postdata();
 				}

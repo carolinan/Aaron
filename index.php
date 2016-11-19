@@ -17,7 +17,7 @@ aaron_jetpack_featured_posts();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 		<?php
-		aaron_front_page_top_sections();
+		aaron_top_sections();
 
 		/* This is the end of our top page section. Now lets show the latest posts: */
 		if ( have_posts() ) : ?>
@@ -46,7 +46,7 @@ aaron_jetpack_featured_posts();
 		<?php endif; ?>
 
 		<?php
-		aaron_front_page_bottom_sections();
+		aaron_bottom_sections();
 		?>
 
 		</main><!-- #main -->
