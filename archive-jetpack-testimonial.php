@@ -14,9 +14,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php
-			if ( '' !== $jetpack_options['featured-image'] ) : ?>
+			if ( '' !== $jetpack_options['featured-image'] ) {
 				echo wp_get_attachment_image( (int) $jetpack_options['featured-image'], 'aaron-jetpack-logo' );
-			<?php
 			}
 
 			if ( have_posts() ) : ?>

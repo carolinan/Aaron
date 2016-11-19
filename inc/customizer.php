@@ -131,8 +131,8 @@ function aaron_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_section('aaron_section_accessibility',      array(
-		'title' => __( 'Accessibility settings', 'aaron' ),
-		'priority' => 100,
+		'title'	=> __( 'Accessibility settings', 'aaron' ),
+		'priority'	=> 100,
 		)
 	);
 
@@ -252,9 +252,9 @@ function aaron_customize_register( $wp_customize ) {
         'selector' => '.entry-footer',
         'container_inclusive' => true,
         'render_callback' => function() {
-            aaron_entry_footer();
-       }
-    )  );
+			aaron_entry_footer();
+		}
+	)  );
 
 	// Hide author.
 	$wp_customize->add_setting( 'aaron_hide_author',		array(
@@ -640,7 +640,7 @@ function aaron_customize_register( $wp_customize ) {
         'selector' => '.frontpage-top',
         'container_inclusive' => true,
         'render_callback' => function() {
-            aaron_front_page_top_sections();
+            aaron_top_sections();
        }
     )  );
 
@@ -671,7 +671,7 @@ function aaron_customize_register( $wp_customize ) {
         'selector' => '.frontpage-bottom',
         'container_inclusive' => true,
         'render_callback' => function() {
-            aaron_front_page_bottom_sections();
+            aaron_bottom_sections();
        }
     )  );
 
