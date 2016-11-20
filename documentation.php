@@ -224,7 +224,7 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-change">
 		<h3><?php esc_html_e( 'Changelog','aaron' ); ?></h3>
-		<?php esc_html_e( "The changelog is available in the readme.txt file in your theme folder","aaron" ); ?><br><br>
+		<?php esc_html_e( "The changelog is available in the readme.txt file in your theme folder.","aaron" ); ?><br><br>
 	</div>
 <?php
 }

@@ -17,6 +17,8 @@ To create a portfolio, install Jetpack and create your projects, all the templat
 Aaron also works well with Woocommerce and bbPress. 
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
 
+
+
 == Installation ==
 1. Unzip `aaron.zip` to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance' menu in WordPress
@@ -24,20 +26,19 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
-Version 2.8, 2016-11-14
+Version 2.8, 2016-11-20
 Removed the minified stylesheet, as requested by users.
-Added support for selective refresh.
+Added support for selective refresh in the customizer.
+Added 6 new highlight icons and made the icon names translatable.
+Added an additional css class to the highlights (hl+ the number).
+HTML is now allowed in the highlights, this makes it possible to break the text into separate lines. (I recommend that you only place short texts here.)
 Added an option where you can remove the footer credit texts. This option is found under the Advanced Settings in the customizer.
-
-Added the ability to create new pages when the Front page Sections are selected.
-Moved the front page section code from index.php to their own functions in functions.php:
-aaron_top_sections() and aaron_bottom_sections().
-Two new files where added for the front page sections, content-top.php and content-bottom.php.
-
-Added an additional class to the highlights (hl+ the number).
-HTML is now allowed in the highlights, this makes it possible to break the text into separate lines. 
-(I encourage you to only place short texts here, and I have decided to keep the text field instead of adding a text area.)
-
+Added the ability to create new pages when the Front page Sections are selected. This option requires at least WordPress 4.7.
+Moved the front page section code from index.php to their own functions in functions.php: aaron_top_sections() and aaron_bottom_sections().
+Two new files where added for the front page sections: content-top.php and content-bottom.php.
+Fixed a php error in archive-jetpack-testimonial.php.
+Minor updates to the documentaiton.
+Removed an unused function.
 
 
 Version 2.7, 2016-07-12
