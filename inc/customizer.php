@@ -292,9 +292,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'aaron_hide_meta', array(
 		'selector' => '.entry-footer',
 		'container_inclusive' => true,
-		'render_callback' => function() {
-			aaron_entry_footer();
-		},
+		'render_callback' => 'aaron_entry_footer',
 	)  );
 
 	// Hide author.
@@ -310,9 +308,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'aaron_hide_author', array(
 		'selector' => '.entry-meta',
 		'container_inclusive' => true,
-		'render_callback' => function() {
-			aaron_posted_on();
-		},
+		'render_callback' => 'aaron_posted_on',
 	)  );
 
 	$wp_customize->add_setting( 'aaron_breadcrumb',	array(
@@ -327,9 +323,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'aaron_breadcrumb', array(
 		'selector' => '.crumbs',
 		'container_inclusive' => true,
-		'render_callback' => function() {
-			aaron_breadcrumbs();
-		},
+		'render_callback' => 'aaron_breadcrumbs',
 	)  );
 
 	/**
@@ -440,9 +434,7 @@ function aaron_customize_register( $wp_customize ) {
 		$wp_customize->selective_refresh->add_partial( 'aaron_highlight' . $i . '_icon', array(
 	        'selector' => '.hl' . $i,
 	        'container_inclusive' => true,
-	        'render_callback' => function() {
-	            aaron_highlights();
-			},
+	        'render_callback' => 'aaron_highlights',
 	    ) );
 	} // End for().
 
@@ -465,9 +457,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'aaron_action_text', array(
 		'selector' => '#action',
 		'container_inclusive' => true,
-		'render_callback' => function() {
-			aaron_action();
-		},
+		'render_callback' => 'aaron_action',
 	) );
 
 	$wp_customize->add_section('aaron_section_one', array(
@@ -637,9 +627,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'aaron_top_section1', array(
 		'selector' => '.frontpage-top',
 		'container_inclusive' => true,
-		'render_callback' => function() {
-			aaron_top_sections();
-		},
+		'render_callback' => 'aaron_top_sections',
 	) );
 
 	/* Bottom Section */
@@ -666,9 +654,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->selective_refresh->add_partial( 'aaron_bottom_section1', array(
 		'selector' => '.frontpage-bottom',
 		'container_inclusive' => true,
-		'render_callback' => function() {
-			aaron_bottom_sections();
-		},
+		'render_callback' => 'aaron_bottom_sections',
 	) );
 
 	/* Add a better screen reader text for the two widget areas depending on your content. */
