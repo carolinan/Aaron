@@ -4,19 +4,18 @@ Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-rea
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2015-2016 Carolina Nymark
+Copyright 2015-2017 Carolina Nymark
 
 = Description ==
 
 Description: Aaron is a responsive, accessibility-ready multi-purpose theme.
-Features include Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. T
+Features include Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website.
 The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. 
 Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. 
 I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. 
 To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme.
 Aaron also works well with Woocommerce and bbPress. 
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-
 
 
 == Installation ==
@@ -26,7 +25,7 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
-Version 2.8, 2016-11-20
+Version 2.8, 2016-12-07
 Removed the minified stylesheet, as requested by users.
 Added support for selective refresh in the customizer.
 Added 6 new highlight icons and made the icon names translatable.
@@ -37,7 +36,10 @@ Added the ability to create new pages when the Front page Sections are selected.
 Moved the front page section code from index.php to their own functions in functions.php: aaron_top_sections() and aaron_bottom_sections().
 Two new files where added for the front page sections: content-top.php and content-bottom.php.
 Fixed a php error in archive-jetpack-testimonial.php.
-Minor updates to the documentaiton.
+Minor updates to the documentation.
+Removed the reset fuctionality from the customizer.
+Updated the checkbox sanitization.
+Added some starter content to help users see where to add widgets and a social menu.
 Removed an unused function.
 
 
@@ -157,9 +159,6 @@ Removed social icons from the header menu.
 Slight increase of font-size on some elements.
 
 
-
-
-
 == Folders included in this theme ==
 images/ -contains header images, borer and images for the setup help.
 languages/ -contains language files.
@@ -188,3 +187,8 @@ JavaScript
 Keyboard Accessible Dropdown Menus
 Copyright 2013 Amy Hendrix (email : amy@amyhendrix.net), Graham Armfield (email : graham.armfield@coolfields.co.uk)
 License: MIT
+
+Checkbox sanitization
+Copyright (c) 2015, WordPress Theme Review Team
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php

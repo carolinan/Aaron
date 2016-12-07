@@ -13,10 +13,8 @@
 		if ( ! aaron_get_meta( 'aaron_replace_title' ) ) {
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		}
+		aaron_posted_on();
 		?>
-		<div class="entry-meta">
-			<?php aaron_posted_on(); ?>
-		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">

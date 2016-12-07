@@ -11,7 +11,7 @@
  */
 function aaron_get_meta( $value ) {
 	if ( is_home() ) {
-		$postid = get_option('page_for_posts');
+		$postid = get_option( 'page_for_posts' );
 	} else {
 		$postid = get_the_ID();
 	}

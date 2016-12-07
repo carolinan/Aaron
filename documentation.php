@@ -42,14 +42,13 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-menus">
 		<h3><?php esc_html_e( 'Menus','aaron' ); ?></h3>
-		<?php _e( 'This theme has two optional menu locations, the <b>Primary menu</b> and the <b>Social menu</b>.','aaron' ); ?><br>
+		<?php esc_html_e( 'This theme has two optional menu locations, the Primary menu and the Social menu.','aaron' ); ?><br>
 
 <img src="<?php echo get_template_directory_uri() . '/images/doc-menu.jpg';?>" alt="<?php esc_attr_e( 'An image describing how a submenu drops down from the Primary menu','aaron' ); ?>">
 		<br>
-			
 		<b><?php esc_html_e( 'The Primary menu','aaron' ); ?></b> <?php _ex( 'is fixed at the top of the website and shows two menu levels.', 'The Primary menu', 'aaron' )?>
 		<?php esc_html_e( 'This menu will collapse on smaller screens, and can then be opened and closed by a menu button. It can also be closed with the Esc key.','aaron' ); ?><br>
-		<?php esc_html_e( 'A one line menu is recommended, or the menu will overlap your content. Use sub menus instead.','aaron' ); ?><br><br>
+		<?php esc_html_e( 'A one line menu is recommended, or the menu will overlap your content. Use sub menus instead.','aaron' ); ?><br>
 
 		<img src="<?php echo get_template_directory_uri() . '/images/doc-social.jpg';?>" alt="<?php esc_attr_e( 'An image describing how social icons are lined up next to each other in the Social menu','aaron' ); ?>"><br>
 
@@ -65,8 +64,7 @@ function aaron_docs() {
 		tumblr, twitter, vimeo, vine<br> yelp, youtube, wordpress, paypal, lastfm, behance, deviantart, spotify, skype, slack, amazon, steam, xing, medium, qq, codepen.</i>'; ?>
 		<br><br>
 		<b><?php esc_html_e( 'Advanced','aaron' ); ?></b><br>
-		<?php esc_html_e( 'By default, the primary menu also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.<br>
-		You can edit these features under the Advanced settings tab in the Customizer.','aaron' ); ?>
+		<?php esc_html_e( 'By default, the primary menu also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.	You can edit these features under the Advanced settings tab in the Customizer.','aaron' ); ?>
 	</div>
 
 	<div class="doc-box" id="aaron-widgets">
@@ -92,7 +90,7 @@ function aaron_docs() {
 				<li><?php esc_html_e( 'Change colors','aaron' ); ?></li>
 				<li><?php esc_html_e( 'Hide the button','aaron' ); ?></li>		
 			</ul>
-			<b><?php esc_html_e( 'Highlights:','aaron');?></b>  
+			<b><?php esc_html_e( 'Highlights:','aaron' );?></b>  
 			<?php esc_html_e( 'This is a flexible way for you to feature different sections of your website. You can add upp to nine highlights.','aaron' );?><br>
 			
 			<?php esc_html_e( 'In the customizer you can:','aaron' ); ?>
@@ -103,8 +101,8 @@ function aaron_docs() {
 				<li><?php esc_html_e( 'Change colors','aaron' ); ?></li>	
 				<li><?php esc_html_e( 'Hide the individual highlights or all of them','aaron' ); ?></li>
 			</ul>
-			<b><?php esc_html_e( 'Tagline:','aaron');?></b>	<?php  esc_html_e( 'You will find an option to hide your tagline in the customizer.','aaron' ); ?><br>
-			<b><?php esc_html_e( 'Header Background:','aaron');?></b> <?php esc_html_e( 'You can change the background image or background color in the customizer.','aaron' ); ?><br><br>
+			<b><?php esc_html_e( 'Tagline:','aaron' );?></b> <?php esc_html_e( 'You will find an option to hide your tagline in the customizer.','aaron' ); ?><br>
+			<b><?php esc_html_e( 'Header Background:','aaron' );?></b> <?php esc_html_e( 'You can change the background image or background color in the customizer.','aaron' ); ?><br><br>
 
 			<h3><?php esc_html_e( 'Custom front page','aaron' ); ?></h3>
 			<?php esc_html_e( 'To use a custom page template for the front page, create a new page and select the template under Page Attributes.','aaron' );?><br>
@@ -179,7 +177,7 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-fonts">
 		<h3><?php esc_html_e( 'Fonts','aaron' ); ?></h3>
-		<?php esc_html_e( "Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.","aaron" ); ?>
+		<?php esc_html_e( 'Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.','aaron' ); ?>
 		<?php esc_html_e( 'You will find an option to change Montserrat to a different font in the customizer.','aaron' ); ?><br><br>
 	</div>
 
@@ -224,7 +222,7 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-change">
 		<h3><?php esc_html_e( 'Changelog','aaron' ); ?></h3>
-		<?php esc_html_e( "The changelog is available in the readme.txt file in your theme folder.","aaron" ); ?><br><br>
+		<?php esc_html_e( 'The changelog is available in the readme.txt file in your theme folder.','aaron' ); ?><br><br>
 	</div>
 <?php
 }

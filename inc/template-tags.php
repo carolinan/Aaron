@@ -10,6 +10,7 @@ if ( ! function_exists( 'aaron_posted_on' ) ) {
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function aaron_posted_on() {
+		echo '<div class="entry-meta">';
 		if ( ! is_front_page() && ! is_home() ) {
 			aaron_breadcrumbs();
 		}
@@ -36,6 +37,7 @@ if ( ! function_exists( 'aaron_posted_on' ) ) {
 
 			echo '<span class="byline author vcard">' . $byline . '</span><span class=" posted-on"> ' . $posted_on . '</span>';
 		}
+		echo '</div><!-- .entry-meta -->';
 	}
 }
 
@@ -142,7 +144,7 @@ function aaron_custom_excerpt_more( $output ) {
 }
 
 function aaron_continue_reading( $id ) {
-	return '<a class="more-link" href="' . get_permalink( $id ) . '">' . sprintf( esc_html__( 'Continue Reading %s', 'aaron' ), get_the_title( $id ) ) . '</a>';
+	return '<a class="more-link" href="' . esc_url( get_permalink( $id ) ) . '">' . sprintf( esc_html__( 'Continue Reading %s', 'aaron' ), get_the_title( $id ) ) . '</a>';
 }
 
 if ( ! function_exists( 'aaron_breadcrumbs' ) ) {

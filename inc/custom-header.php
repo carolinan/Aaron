@@ -113,7 +113,7 @@ function aaron_featured_image_header_css() {
 				echo '.site-header { background:' . esc_attr( get_theme_mod( 'aaron_header_bgcolor', '#4777a6' ) ) . ';}';
 			}
 		}
-	}
+	} // End if().
 }
 
 /**

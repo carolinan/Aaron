@@ -1,4 +1,9 @@
 <?php
+/**
+ *  The template used for displaying the Highlights.
+ *
+ * @package aaron
+ */
 
 /**
  * Frontpage Highlights
@@ -12,7 +17,7 @@ function aaron_highlights() {
 				// Now check if there is any actual content to show.
 				if ( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) || get_theme_mod( 'aaron_highlight' . $i . '_text' ) || get_theme_mod( 'aaron_highlight' . $i . '_icon' ) && get_theme_mod( 'aaron_highlight' . $i . '_icon' ) !== 'no-icon' || get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) {
 
-					echo '<div class="highlights hl' . $i .'" style="background:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_bgcolor', '#fafafa' ) ) . ';">';
+					echo '<div class="highlights hl' . $i . '" style="background:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_bgcolor', '#fafafa' ) ) . ';">';
 					// Lets make the whole area clickable if there is a link.
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) {
 						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '">';

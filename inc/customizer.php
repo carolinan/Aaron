@@ -189,11 +189,6 @@ function aaron_customize_register( $wp_customize ) {
 		'priority' => 100,
 	) );
 
-	$wp_customize->add_section('aaron_section_reset', array(
-		'title' => __( 'Reset', 'aaron' ),
-		'priority' => 220,
-	) );
-
 	/* Change the names of the default settings. */
 	$wp_customize->get_section( 'header_image' )->title = __( 'Header background', 'aaron' );
 	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Site Title Color', 'aaron' );
@@ -278,7 +273,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'aaron_hide_meta_search', array(
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
-	$wp_customize->add_control('aaron_hide_meta_search', array(
+	$wp_customize->add_control( 'aaron_hide_meta_search', array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to hide the meta information on the search results.', 'aaron' ),
 		'section' => 'aaron_section_advanced',
@@ -288,7 +283,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'aaron_hide_meta', array(
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
-	$wp_customize->add_control('aaron_hide_meta', array(
+	$wp_customize->add_control( 'aaron_hide_meta', array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to hide all the meta information.', 'aaron' ),
 		'section' => 'aaron_section_advanced',
@@ -306,11 +301,19 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'aaron_hide_author', array(
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
-	$wp_customize->add_control('aaron_hide_author',	array(
+	$wp_customize->add_control( 'aaron_hide_author',	array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to hide the author and post date information.', 'aaron' ),
 		'section' => 'aaron_section_advanced',
 	) );
+
+	$wp_customize->selective_refresh->add_partial( 'aaron_hide_author', array(
+		'selector' => '.entry-meta',
+		'container_inclusive' => true,
+		'render_callback' => function() {
+			aaron_posted_on();
+		},
+	)  );
 
 	$wp_customize->add_setting( 'aaron_breadcrumb',	array(
 			'sanitize_callback' => 'aaron_sanitize_checkbox',
@@ -320,6 +323,14 @@ function aaron_customize_register( $wp_customize ) {
 		'label' => __( 'Check this box to show the breadcrumb navigation.', 'aaron' ),
 		'section' => 'aaron_section_advanced',
 	) );
+
+	$wp_customize->selective_refresh->add_partial( 'aaron_breadcrumb', array(
+		'selector' => '.crumbs',
+		'container_inclusive' => true,
+		'render_callback' => function() {
+			aaron_breadcrumbs();
+		},
+	)  );
 
 	/**
 	* Frontpage Highlights.
@@ -566,7 +577,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'aaron_hide_credits', array(
 		'sanitize_callback' => 'aaron_sanitize_checkbox',
 	) );
-	$wp_customize->add_control('aaron_hide_credits', array(
+	$wp_customize->add_control( 'aaron_hide_credits', array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to hide the Theme Author credit in the footer =(.', 'aaron' ),
 		'section' => 'aaron_section_advanced',
@@ -681,6 +692,7 @@ function aaron_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'aaron_caps', array(
 		'sanitize_callback' => 'aaron_sanitize_cap',
+		'default'        => 'uppercase',
 	) );
 	$wp_customize->add_control( 'aaron_caps', array(
 		'type'	=> 'select',
@@ -721,18 +733,6 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	) );
 
-	/**
-	 * Reset.
-	 */
-	$wp_customize->add_setting( 'aaron_reset', array(
-		'sanitize_callback' => 'aaron_sanitize_reset',
-	) );
-	$wp_customize->add_control('aaron_reset', array(
-		'type' => 'text',
-		'label' => __( 'Are you sure that you want to reset your settings? Type YES in the box, save and refresh the page.', 'aaron' ),
-		'section' => 'aaron_section_reset',
-	) );
-
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'aaron_hide_search' )->transport  = 'postMessage';
@@ -771,24 +771,18 @@ function aaron_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function aaron_sanitize_checkbox( $input ) {
-	if ( 1 === $input ) {
-		return 1;
-	} else {
-		return '';
-	}
-}
-
 /**
- * Reset the theme settings.
+ * Checkbox sanitization callback, from https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+ *
+ * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+ * as a boolean value, either TRUE or FALSE.
+ *
+ * @param bool $checked Whether the checkbox is checked.
+ * @return bool Whether the checkbox is checked.
  */
-function aaron_sanitize_reset( $input ) {
-	$input = sanitize_text_field( $input );
-	if ( $input == 'YES' ) {
-		remove_theme_mods();
-	} else {
-		return;
-	}
+function aaron_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
 /**
