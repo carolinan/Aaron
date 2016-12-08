@@ -30,7 +30,7 @@ function aaron_customize_register( $wp_customize ) {
 			?>
 			<div class="aaron-radio-buttons">
 				<fieldset>
-				<legend class="customize-control-title"><?php esc_html_e( $this->label ); ?></legend>
+				<legend class="customize-control-title"><?php echo esc_html( $this->label ); ?></legend>
 				<label>
 					<input type="radio" value="dashicons-admin-users" name="<?php echo esc_attr( $this->id ); ?>" 
 					<?php $this->link(); checked( $this->value(), 'dashicons-admin-users' ); ?> />
@@ -192,6 +192,8 @@ function aaron_customize_register( $wp_customize ) {
 	/* Change the names of the default settings. */
 	$wp_customize->get_section( 'header_image' )->title = __( 'Header background', 'aaron' );
 	$wp_customize->get_control( 'header_textcolor' )->label = __( 'Site Title Color', 'aaron' );
+	$wp_customize->get_control( 'background_color' )->label = __( 'Body Background Color', 'aaron' );
+	$wp_customize->get_control( 'background_color' )->description = __( 'Does not affect the background color of the menu, posts, widgets or footer.', 'aaron' );
 
 	$wp_customize->add_setting( 'aaron_header_bgcolor', array(
 		'default'        => '#4777a6',
@@ -833,7 +835,7 @@ function aaron_sanitize_cap( $input ) {
 	$valid = array(
 	  	'uppercase'	=> __( 'Uppercase (Default, transforms all characters to uppercase).','aaron' ),
 		'initial'	=> __( 'Normal.','aaron' ),
-	    'capitalize' => __( 'Capitalized	(Transforms the first character of each word to uppercase).','aaron' ),
+	    'capitalize' => __( 'Capitalized (Transforms the first character of each word to uppercase).','aaron' ),
 	);
 	if ( array_key_exists( $input, $valid ) ) {
 		return $input;

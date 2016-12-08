@@ -945,6 +945,11 @@ Social menu
 	box-sizing: border-box;	
 	width:100%;
 	font-family: 'Open Sans', sans-serif;
+
+	background:#fafafa url(images/border.png) repeat-x bottom;
+	border:4px solid #fff;
+	border-radius:4px;
+	box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
 }
 
 .widget-title,
@@ -1346,7 +1351,7 @@ table#wp-calendar,
 /*--------------------------------------------------------------
 10.2 Posts and pages
 --------------------------------------------------------------*/
-.aaron-border, .widget{	
+.aaron-border {	
 	background:url(images/border.png) repeat-x bottom;
 	border:4px solid #fff;
 	border-radius:4px;

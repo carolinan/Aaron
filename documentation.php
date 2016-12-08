@@ -128,6 +128,10 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-advanced">
 		<h3><?php esc_html_e( 'Advanced settings','aaron' ); ?></h3>
+		<?php esc_html_e( 'With WordPress 4.7 and newer, Aaron uses visible edit shortcuts in the customizer preview, making it easier to see elements and options on your site that can be edited. ','aaron' ); ?>
+			<?php esc_html_e( 'Look for this symbol and click on it to edit the element.','aaron' ); ?><br>
+			<img src="<?php echo get_template_directory_uri() . '/images/doc-shortcut.jpg';?>" alt="<?php esc_attr_e( 'An image of the icon used to visualize the edit shortcuts.','aaron' ); ?>">
+		<br><br>
 		<?php esc_html_e( 'Under the Advanced settings tab in the customizer you will find the following options:','aaron' ); ?><br>
 		<ul>
 			<li><?php esc_html_e( 'Show the excerpt instead of the full content on the front page, blog listing and archives.','aaron' ); ?> 
@@ -178,7 +182,10 @@ function aaron_docs() {
 	<div class="doc-box" id="aaron-fonts">
 		<h3><?php esc_html_e( 'Fonts','aaron' ); ?></h3>
 		<?php esc_html_e( 'Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.','aaron' ); ?>
-		<?php esc_html_e( 'You will find an option to change Montserrat to a different font in the customizer.','aaron' ); ?><br><br>
+		<?php esc_html_e( 'You will find an option to change Montserrat to a different font in the customizer.','aaron' ); ?><br>
+		<?php esc_html_e( 'The available fonts are: Montserrat, Open Sans, Oswald, Rambla, Ubuntu Condensed and Fjalla One','aaron' ); ?>
+		<br><br>
+
 	</div>
 
 	<div class="doc-box" id="aaron-plugins">

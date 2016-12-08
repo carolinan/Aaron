@@ -43,11 +43,8 @@
 			}else{
 				$( '.topsearch' ).css( 'display', 'initial' );
 			}
-
 		});
-
 	} );
-
 
 	wp.customize( 'aaron_hide_title', function( value ) {
 		value.bind( function( newval ) {

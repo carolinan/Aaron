@@ -54,6 +54,11 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 		 */
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
+		$aaron_bg_args = array(
+			'default-color' => '#fafafa',
+		);
+		add_theme_support( 'custom-background', $aaron_bg_args );
+
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_theme_support( 'starter-content', array(

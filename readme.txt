@@ -25,6 +25,13 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 2.9, 2016-12-08
+Corrected a translation problem in customzier.php.
+Added an option to change the background color of the body.
+  -This option does not affect the background color of the menu, posts, widgets or footer.
+Minor updates to the documentation.
+
+
 Version 2.8, 2016-12-07
 Removed the minified stylesheet, as requested by users.
 Added support for selective refresh in the customizer.
