@@ -31,24 +31,17 @@ function aaron_highlights() {
 					// If there is an image, show it.
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) {
 						echo '<img src="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) . '" class="highlight-img"' ;
-						// Include the alt attribute.
-						if ( get_theme_mod( 'aaron_highlight' . $i . '_alt' ) ) {
-							echo ' alt="' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_alt' ) ) . '" >' ;
-						} else {
-							// The image is decorative, add an empty alt attribute.
-							echo ' alt="" >';
-						}
 					}
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) {
 						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '">';
 					}
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) ) {
 						echo '<h2 style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' . 
-						get_theme_mod( 'aaron_highlight' . $i . '_headline' ) . '</h2>';
+						wp_kses_post( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) ) . '</h2>';
 					}
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) {
 						echo '<p style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' . 
-						get_theme_mod( 'aaron_highlight' . $i . '_text' ) . '</p>';
+						wp_kses_post( get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) . '</p>';
 					}
 					// Close the link.
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) {

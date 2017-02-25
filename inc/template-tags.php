@@ -79,7 +79,7 @@ if ( ! function_exists( 'aaron_entry_footer' ) ) {
 
 			/* Display jetpack's share if it's active*/
 			if ( function_exists( 'sharing_display' ) ) {
-				echo sharing_display();
+				sharing_display( '', true );
 			}
 
 			/* Display jetpack's like  if it's active */
@@ -114,7 +114,7 @@ if ( ! function_exists( 'aaron_portfolio_footer' ) ) {
 
 			/* Display jetpack's share if it's active*/
 			if ( function_exists( 'sharing_display' ) ) {
-				echo sharing_display();
+				sharing_display( '', true );
 			}
 
 			/* Display jetpack's like  if it's active */

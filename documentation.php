@@ -44,20 +44,20 @@ function aaron_docs() {
 		<h3><?php esc_html_e( 'Menus','aaron' ); ?></h3>
 		<?php esc_html_e( 'This theme has two optional menu locations, the Primary menu and the Social menu.','aaron' ); ?><br>
 
-<img src="<?php echo get_template_directory_uri() . '/images/doc-menu.jpg';?>" alt="<?php esc_attr_e( 'An image describing how a submenu drops down from the Primary menu','aaron' ); ?>">
+<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-menu.jpg' );?>" alt="<?php esc_attr_e( 'An image describing how a submenu drops down from the Primary menu','aaron' ); ?>">
 		<br>
-		<b><?php esc_html_e( 'The Primary menu','aaron' ); ?></b> <?php _ex( 'is fixed at the top of the website and shows two menu levels.', 'The Primary menu', 'aaron' )?>
+		<b><?php esc_html_e( 'The Primary menu','aaron' ); ?></b> <?php echo esc_html_x( 'is fixed at the top of the website and shows two menu levels.', 'The Primary menu', 'aaron' )?>
 		<?php esc_html_e( 'This menu will collapse on smaller screens, and can then be opened and closed by a menu button. It can also be closed with the Esc key.','aaron' ); ?><br>
 		<?php esc_html_e( 'A one line menu is recommended, or the menu will overlap your content. Use sub menus instead.','aaron' ); ?><br>
 
-		<img src="<?php echo get_template_directory_uri() . '/images/doc-social.jpg';?>" alt="<?php esc_attr_e( 'An image describing how social icons are lined up next to each other in the Social menu','aaron' ); ?>"><br>
+		<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-social.jpg' );?>" alt="<?php esc_attr_e( 'An image describing how social icons are lined up next to each other in the Social menu','aaron' ); ?>"><br>
 
-		<b><?php esc_html_e( 'The Social menu','aaron' );?></b> <?php _ex( 'is at the bottom of the page and shows logos of the social networks of your choice. It does not display any text, but has additional information for screen readers.','The Social menu', 'aaron' ); ?><br>
+		<b><?php esc_html_e( 'The Social menu','aaron' );?></b> <?php echo esc_html_x( 'is at the bottom of the page and shows logos of the social networks of your choice. It does not display any text, but has additional information for screen readers.','The Social menu', 'aaron' ); ?><br>
 		<?php esc_html_e( 'The icon will be added automatically, all you need to do is add a link to your menu.','aaron' ); ?><br><br>
 		<?php esc_html_e( 'Create a new menu, then click on Custom links and add your URL.','aaron' ); ?> <?php esc_html_e( 'The Link Text that you provide is used as screen reader text.','aaron' ); ?><br>
-		<img src="<?php echo get_template_directory_uri() . '/images/doc-social2.jpg';?>" alt="<?php esc_attr_e( 'An image describing where to add URLS for the social menu.','aaron' ); ?>"><br>
+		<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-social2.jpg' );?>" alt="<?php esc_attr_e( 'An image describing where to add URLS for the social menu.','aaron' ); ?>"><br>
 		<?php esc_html_e( 'Choose the theme location named Social Menu, and save.','aaron' ); ?><br>
-		<img src="<?php echo get_template_directory_uri() . '/images/doc-social3.jpg';?>" alt="<?php esc_attr_e( 'An image describing what the social menu will look like when a theme location has been picked.','aaron' ); ?>"><br><br>
+		<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-social3.jpg' );?>" alt="<?php esc_attr_e( 'An image describing what the social menu will look like when a theme location has been picked.','aaron' ); ?>"><br><br>
 		<?php esc_html_e( 'Troubleshooting: If your link or icon is not showing up, try using lower case letters.','aaron' ); ?><br>
 		<?php esc_html_e( 'Available icons:','aaron' ); ?><br>
 		<?php echo '<i> dribbble, facebook, flickr, foursquare, github, google plus, instagram, jsfiddle, linkedin, pinterest, reddit, soundcloud, stackoverflow,
@@ -106,10 +106,10 @@ function aaron_docs() {
 
 			<h3><?php esc_html_e( 'Custom front page','aaron' ); ?></h3>
 			<?php esc_html_e( 'To use a custom page template for the front page, create a new page and select the template under Page Attributes.','aaron' );?><br>
-			<img src="<?php echo get_template_directory_uri() . '/images/doc-page-template.jpg';?>" alt="<?php esc_attr_e( 'An image describing how to set a page template.','aaron' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-page-template.jpg' );?>" alt="<?php esc_attr_e( 'An image describing how to set a page template.','aaron' ); ?>">
 			<br>
 			<?php esc_html_e( 'Then set your new page as your static front page in the customizer or under Settings > Reading.','aaron' ); ?><br>
-			<img src="<?php echo get_template_directory_uri() . '/images/doc-static.jpg';?>" alt="<?php esc_attr_e( 'An image describing how to set a static front page.','aaron' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-static.jpg' );?>" alt="<?php esc_attr_e( 'An image describing how to set a static front page.','aaron' ); ?>">
 			<br>
 
 			<h3><?php esc_html_e( 'Templates','aaron' ); ?></h3>
@@ -130,7 +130,7 @@ function aaron_docs() {
 		<h3><?php esc_html_e( 'Advanced settings','aaron' ); ?></h3>
 		<?php esc_html_e( 'With WordPress 4.7 and newer, Aaron uses visible edit shortcuts in the customizer preview, making it easier to see elements and options on your site that can be edited. ','aaron' ); ?>
 			<?php esc_html_e( 'Look for this symbol and click on it to edit the element.','aaron' ); ?><br>
-			<img src="<?php echo get_template_directory_uri() . '/images/doc-shortcut.jpg';?>" alt="<?php esc_attr_e( 'An image of the icon used to visualize the edit shortcuts.','aaron' ); ?>">
+			<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-shortcut.jpg' );?>" alt="<?php esc_attr_e( 'An image of the icon used to visualize the edit shortcuts.','aaron' ); ?>">
 		<br><br>
 		<?php esc_html_e( 'Under the Advanced settings tab in the customizer you will find the following options:','aaron' ); ?><br>
 		<ul>
@@ -201,14 +201,14 @@ function aaron_docs() {
 					<?php esc_html_e( '-Once Jetpack has been activated, you can select up to six posts or pages as a front page feature. Chose a tag and add it to your posts to separate them from the rest.','aaron' );?><br>
 				<?php esc_html_e( 'You can also choose a headline for your featured section. Featured images are optional and the recommended image size is 360x300 pixels.','aaron' ); ?>
 					<br>
-<img src="<?php echo get_template_directory_uri() . '/images/doc-featured.jpg';?>" alt="<?php esc_attr_e( 'An image describing three featured posts on the front page, two with featured images and one that only displays the post title.', 'aaron' ) ?>"><br>
+<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-featured.jpg' );?>" alt="<?php esc_attr_e( 'An image describing three featured posts on the front page, two with featured images and one that only displays the post title.', 'aaron' ) ?>"><br>
 					</li>
 					<li><b><?php esc_html_e( 'Custom Content Type: Portfolio','aaron' ); ?></b><br>
 						<?php esc_html_e( 'Aaron also supports Jetpack','aaron' ); ?> 
 						<b><?php esc_html_e( 'Portfolios','aaron' ); ?></b>.
 						<?php printf( __( '<a href="%s">Read more about how to setup your Portfolio on Jetpacks support site.</a>', 'aaron' ), esc_url( 'http://en.support.wordpress.com/portfolios/' ) );?>
 						 <br><br>
-				<img src="<?php echo get_template_directory_uri() . '/images/doc-portfolio.jpg';?>" alt="<?php esc_attr_e( 'An image describing two portfolio items.','aaron' ); ?>"><br>
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-portfolio.jpg' );?>" alt="<?php esc_attr_e( 'An image describing two portfolio items.','aaron' ); ?>"><br>
 					</li>
 					<li><b><?php esc_html_e( 'Custom Content Type: Testimonials','aaron' ); ?></b><br>
 						<?php esc_html_e( 'Aaron also supports Jetpack','aaron' ); ?> <b><?php esc_html_e( 'Testimonials','aaron' ); ?></b>. <br>
@@ -218,8 +218,8 @@ function aaron_docs() {
 					</li>
 					<li><b><?php esc_html_e( 'Sharing','aaron' ); ?></b><br>
 						<?php esc_html_e( '-If you activate Jetpack sharing, your buttons will be displayed below the meta information, to the right of your post content.','aaron' ); ?>
-						<br>
-						<img src="<?php echo get_template_directory_uri() . '/images/doc-share.jpg';?>" alt="<?php esc_attr_e( 'An image describing how sharing buttons are added to the post footer below Tags and Categories.','aaron' ); ?>"><br>
+						<br> 
+						<img src="<?php echo esc_url( get_template_directory_uri() . '/images/doc-share.jpg' );?>" alt="<?php esc_attr_e( 'An image describing how sharing buttons are added to the post footer below Tags and Categories.','aaron' ); ?>"><br>
 					</li>
 					<li><b><?php esc_html_e( 'Contact Form','aaron' ); ?></b></li>
 				</ul>

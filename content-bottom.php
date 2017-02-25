@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('frontpage-bottom'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'frontpage-bottom' ); ?>>
 	<?php
 	if ( ! aaron_get_meta( 'aaron_replace_title' ) ) {
 		if ( is_page_template( 'templates/sections.php' ) ) {
@@ -40,7 +40,7 @@
 		<?php
 		/* Display jetpack's share if it's active*/
 		if ( function_exists( 'sharing_display' ) ) {
-			echo sharing_display();
+			sharing_display( '', true );
 		}
 		?>
 </article><!-- #post-## -->

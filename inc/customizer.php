@@ -384,16 +384,6 @@ function aaron_customize_register( $wp_customize ) {
 			'description'    => __( 'Uploading an image will overwrite your icon settings.', 'aaron' ),
 			'section'  => 'aaron_section_' . $i,
 		) ) );
-		// Add alt="" text for uploaded images in the highlights.
-		$wp_customize->add_setting( 'aaron_highlight' . $i . '_alt', array(
-			'sanitize_callback' => 'aaron_sanitize_text',
-		) );
-
-		$wp_customize->add_control('aaron_highlight' . $i . '_alt',	array(
-			'type' => 'text',
-			'label' => __( 'If you have chosen an image, please also add an alternative text:', 'aaron' ),
-			'section' => 'aaron_section_' . $i,
-		) );
 		$wp_customize->add_setting( 'aaron_highlight' . $i . '_bgcolor', array(
 			'default' => '#fafafa',
 			'sanitize_callback' => 'sanitize_hex_color',

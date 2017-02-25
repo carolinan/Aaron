@@ -36,7 +36,7 @@
 		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<div class="site-branding">	
 				<?php
-				if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+				if ( function_exists( 'the_custom_logo' ) ) {
 					the_custom_logo();
 				}
 				// If we are viewing a post or page, and we want to combine it with the header section.
@@ -82,10 +82,10 @@
 				} else {
 					// If it's not a post or page combined with a header, show the site title in a h1, without a link.
 					if ( display_header_text() ) {
-						echo '<h1 class="site-title" itemprop="headline">' . get_bloginfo( 'name' ) . '</h1>';
+						echo '<h1 class="site-title" itemprop="headline">' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 					} else {
 						// If there is no visible site title, make sure there is still a h1 for screen reader.
-						echo '<h1 class="screen-reader-text">' . get_bloginfo( 'name' ) . '</h1>';
+						echo '<h1 class="screen-reader-text">' . esc_html( get_bloginfo( 'name' ) ) . '</h1>';
 					}
 
 					aaron_action();

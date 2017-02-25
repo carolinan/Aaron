@@ -25,8 +25,15 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 3.0, 2017-02-25
+Corrected a missing singular placeholder in comments.php.
+Made sure that html can also be used for the Call to Action text.
+Improved escaping.
+Removed the alt text option for images used in the highlights, to make sure that the theme does not overwrite existing alt text settings.
+
+
 Version 2.9, 2016-12-08
-Corrected a translation problem in customzier.php.
+Corrected a translation problem in customizer.php.
 Added an option to change the background color of the body.
   -This option does not affect the background color of the menu, posts, widgets or footer.
 Minor updates to the documentation.
@@ -179,6 +186,7 @@ Aaron is a derivative work of:
 Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
 Universal http://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
 Sela https://wordpress.com/themes/sela/, based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
+Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016 WordPress.org, GNU General Public License v2 or later
 
 Header image by Ian Prince. Source: https://tookapic.com/ianprince/5613-les-dents-du-midi, License: CC0.
 Image used in the documentation: Karolina Grabowska. Source: https://tookapic.com/kaboompics/3311-dead-flower, License: CC0.

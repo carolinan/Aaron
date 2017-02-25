@@ -26,7 +26,7 @@ get_header(); ?>
 						if ( '' !== $jetpack_options['page-title'] ) {
 							echo esc_html( $jetpack_options['page-title'] );
 						} else {
-								esc_html_e( 'Testimonials', 'aaron' );
+							esc_html_e( 'Testimonials', 'aaron' );
 						}
 						?>
 					</h1>
