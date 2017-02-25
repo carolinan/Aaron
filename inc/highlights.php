@@ -9,7 +9,6 @@
  * Frontpage Highlights
  */
 function aaron_highlights() {
-
 	if ( ! get_theme_mod( 'aaron_hide_highlight' ) ) {
 		for ( $i = 1; $i < 10; $i++ ) {
 			// Is this highlight visisble?
@@ -30,8 +29,18 @@ function aaron_highlights() {
 
 					// If there is an image, show it.
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) {
-						echo '<img src="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) . '" class="highlight-img"' ;
+
+						echo '<img src="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) . '" class="highlight-img"';
+						// Display the image alt text.
+						$image_id = attachment_url_to_postid( esc_url( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) );
+						$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
+
+						if ( $image_alt ) {
+							echo ' alt="' . esc_attr( $image_alt ) . '"';
+						}
+						echo '>';
 					}
+
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) {
 						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '">';
 					}

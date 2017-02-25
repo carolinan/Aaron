@@ -379,11 +379,13 @@ function aaron_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( 'aaron_highlight' . $i . '_image', array(
 			'sanitize_callback' => 'esc_url_raw',
 		) );
+
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'aaron_highlight' . $i . '_image', array(
 			'label' => __( 'Upload an image for your highlight:', 'aaron' ),
 			'description'    => __( 'Uploading an image will overwrite your icon settings.', 'aaron' ),
 			'section'  => 'aaron_section_' . $i,
 		) ) );
+
 		$wp_customize->add_setting( 'aaron_highlight' . $i . '_bgcolor', array(
 			'default' => '#fafafa',
 			'sanitize_callback' => 'sanitize_hex_color',

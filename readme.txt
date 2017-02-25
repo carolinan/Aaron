@@ -30,6 +30,7 @@ Corrected a missing singular placeholder in comments.php.
 Made sure that html can also be used for the Call to Action text.
 Improved escaping.
 Removed the alt text option for images used in the highlights, to make sure that the theme does not overwrite existing alt text settings.
+Added starter content for the header menu.
 
 
 Version 2.9, 2016-12-08

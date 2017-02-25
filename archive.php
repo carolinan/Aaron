@@ -19,12 +19,12 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 			<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 					<div class="featured-post aaron-border">
-						<?php
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail( 'aaron-featured-posts-thumb' );
-						}
-						the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-						echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-type-links">',', ','</span>' );
+					<?php
+					if ( has_post_thumbnail() ) {
+						the_post_thumbnail( 'aaron-featured-posts-thumb' );
+					}
+					the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+					echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-type-links">',', ','</span>' );
 					?>
 					</div>
 				<?php endwhile; ?>
@@ -41,8 +41,8 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 		<?php if ( have_posts() ) : ?>
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+				the_archive_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 

@@ -62,6 +62,10 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_theme_support( 'starter-content', array(
+			'posts' => array(
+				'about',
+				'contact',
+			),
 			'nav_menus' => array(
 				'social' => array(
 					'name' 	=> __( 'Social Menu', 'aaron' ),
@@ -70,6 +74,13 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 						'link_twitter',
 						'link_instagram',
 						'link_email',
+					),
+				),
+				'header' => array(
+					'name' 	=> __( 'Primary Menu', 'aaron' ),
+					'items' => array(
+						'page_about',
+						'page_contact',
 					),
 				),
 			),
