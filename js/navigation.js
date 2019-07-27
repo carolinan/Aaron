@@ -55,13 +55,12 @@
 		} ); 
 	});	
 
-
 } )();
 
 	/* Thanks to: Keyboard Accessible Dropdown Menus
 	Copyright 2013 Amy Hendrix (email : amy@amyhendrix.net), Graham Armfield (email : graham.armfield@coolfields.co.uk)
 	License:      MIT
-	Plugin URI:   http://github.com/sabreuse/accessible-menus
+	Plugin URI:   https://github.com/sabreuse/accessible-menus
 	*/
 
 jQuery(document).ready(function($){	$('.main-navigation li').hover(
@@ -74,22 +73,3 @@ jQuery(document).ready(function($){	$('.main-navigation li').hover(
 	);
 
 });	
-
-/**
-* Add screen reader text to the tagcloud
-* @todo -remove this when the default tagcloud is improved...
-*/
-
-jQuery(".tagcloud a").each( function() {
-    var tagnumber = jQuery(this).attr('title');
-    jQuery(this).append('<span class="screen-reader-text">' + tagnumber +  ' </span>');
-});
-
-
-// fix cases where blog post photos have title attributes but not alt attributes
-// this is caused by WP using title for title but not requiring alt attribute through version 3.6
-jQuery(document).ready(function($){ $('img[title]').not(':has([alt])').each(function () {
-        var theTitle = $(this).attr('title');
-        $(this).attr('alt', theTitle).removeAttr('title');
-    } );
-});

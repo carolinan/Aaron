@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package aaron
+ * @package Aaron
  */
 
 get_header(); ?>
@@ -11,11 +11,11 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-			
+
 			<?php get_template_part( 'content', 'single' ); ?>
-			
+
 			<?php the_post_navigation(); ?>
-			
+
 			<?php
 			// If comments are open, load up the comment template.
 			if ( comments_open() ) {

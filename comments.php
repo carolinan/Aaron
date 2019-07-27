@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package aaron
+ * @package Aaron
  */
 
 /*
@@ -46,28 +46,30 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<?php the_comments_navigation()?>
+		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
+			wp_list_comments(
+				array(
+					'style'       => 'ol',
+					'short_ping'  => true,
 					'avatar_size' => 50,
-				) );
+				)
+			);
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php the_comments_navigation()?>
+		<?php the_comments_navigation(); ?>
 
 	<?php endif; ?>
 
 	<?php
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && '0' !== get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+		?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'aaron' ); ?></p>
-	<?php
+		<?php
 	endif;
 
 	comment_form();

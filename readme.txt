@@ -1,30 +1,125 @@
 === Aaron ===
 Contributors: Poena
 Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, accessibility-ready, custom-header, custom-logo
+Requires at least: 5.0
+Tested up to: 5.2
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Copyright: 2015-2019 Carolina Nymark
 
-Copyright 2015-2017 Carolina Nymark
+Aaron is a responsive, accessible theme with a call to action, front page highlights, page sections and two menus.
 
-= Description ==
+== Description ==
 
-Description: Aaron is a responsive, accessibility-ready multi-purpose theme.
+Description: Aaron is a responsive, accessible multi-purpose theme.
 Features include Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website.
 The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. 
 Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. 
 I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. 
 To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme.
-Aaron also works well with Woocommerce and bbPress. 
-If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
+Aaron also works well with WooCommerce and bbPress. 
 
+Please note that changing the colors of the theme can affect accessibility.
 
 == Installation ==
 1. Unzip `aaron.zip` to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance' menu in WordPress
 
-Please note that changing the colors of the theme can affect accessibility.
-
 == Change log ==
+
+Version 4.1, 2019-05-08
+Fixed a problem with a broken link to font awesome in style.css and rtl.css
+Added support for wp_body_open.
+Added a block style for the gallery which hides the image captions.
+Updated required WordPress version and PHP version.
+
+
+Version 4.0, 2019-03-17
+Included a license file.
+Loaded fonts in the customizer so that you can preview what the fonts look like.
+Added more fonts and adjusted the font size slightly depending on which font is used.
+
+Note: the way the post and page title display in the editor is still buggy.
+
+
+Version 3.9, 2019-01-03
+Fixed problems with icons that did not show up correctly after updating Font Awesome.
+Updated version numbers for styles and scripts to make sure that the correct files, and not the cached files, are loaded.
+Only include the styles for WooCommerce and BBPress if the plugins are active.
+Moved WooCommerce and BBPress styles to separate files.
+Minor style changes for WooCommerce. Increased color contrast. Added underlines to some links, and made input fields larger.
+Moved the script for the skip link, to reduce the number of render blocking scripts.
+
+
+Version 3.8, 2018-12-31
+Updated documentation.
+Fixed a problem with the social menu. Now if there is no social media icon available for the link that
+has been added, a link symbol will be used instead.
+Updated Font Awesome to version 5.6.3. 
+Added more social media icons to the list.
+
+Version 3.7, 2018-12-09
+Added an option to open the highlight links in a new tab.
+
+Version 3.6, 2018-12-01
+Fixed a critical problem with the sanitize callback that prevented some customizer options from saving.
+
+Version 3.5, 2018-11-23
+Updated the readme file and the documentation.
+Minor code style changes to better comply with WordPress coding standards.
+Updated the rtl stylesheet.
+Updated the sanitization for the customizer options.
+Added a screen reader link text to the highlights, if there is no headline or text.
+Menu: Increased the line height, set sub menu width to auto, and reduced the size of the arrow to remove the duplicate underline on hover.
+Also increased the line height for the site title.
+Added an option for body font family, and added support for more fonts.
+Added more color options and moved the header background color option to the colors section.
+Moved the custom css from functions.php to a separate file.
+Further testing and style improvements in preparation for the new block editor:
+	Updated .wp-block-cover-image to the new class: .wp-block-cover.
+	Updated .is-large to the new class: .is-style-large.
+Fixed a problem with the button block background and made sure that the link is underlined.
+
+
+Version 3.4, 2018-10-19
+Housekeeping: Updated links. Updated credits in the readme file. 
+CSS and PHP code style changes according to WordPress coding standards.
+Removed the JavaScript in navigation.js that added the screen reader text to the tag cloud 
+and the alt text to the featured images, since this has been fixed in WordPress core.
+Fixed a problem with a font not loading in the new editor.
+
+
+Version 3.3, 2018-10-06
+Corrected the position of the category and portfolio icons.
+Fixed a styling problem with displaying the Jetpack testimonials in the search results.
+Made sure that the content width option only affects screens wider than 640 pixels.
+Added support for wp-block-styles to better match the Gutenberg editor, and improved the styling of some elements including the button block.
+Added a blank template that you can use if you only want to display Gutenberg blocks.
+
+
+Version 3.2, 2018-09-28
+Made sure that the custom templates works for all pages, not only for the front page.
+Made sure that the meta box options works with the Jetpack portfolio and testimonial post formats.
+Added a testimonial widget. This widget requires the Jetpack testimonial functionality to be activated.
+Made sure that the excerpt_more filter returns the default value in the admin.
+Included a footer link to the privacy policy page, if one is set up.
+Minor updates to the documentation.
+Minor code styling updates.
+Minor style changes: a left side border was added to the blockquote, a border was removed below the footer widgets. Matched font and styles used in the gutenberg editor.
+Updated theme and author URI.
+Updated screenshot.
+
+
+Version 3.1, 2018-01-28
+Fixed an issue with the featured content option.
+Changed the customizer type from text to url for the link options.
+Moved the pingback url from header.php into a separate, conditional function.
+Moved the content width global setup inside the aaron_setup function.
+Improved sanitization for the metabox options.
+Minor code styling updates.
+
+
 Version 3.0, 2017-02-25
 Corrected a missing singular placeholder in comments.php.
 Made sure that html can also be used for the Call to Action text.
@@ -184,27 +279,43 @@ templates/ -contains page templates
 
 == Resources Used In This Theme ==
 Aaron is a derivative work of:
-Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
-Universal http://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
-Sela https://wordpress.com/themes/sela/, based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc. License: GNU General Public License v2 or later
-Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016 WordPress.org, GNU General Public License v2 or later
-
+Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
+Universal https://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
+Sela https://wordpress.com/themes/sela/, based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
+Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016-2018 WordPress.org, GNU General Public License v2 or later
+Twenty Nineteen https://wordpress.org/themes/twentynineteen/ Copyright 2018 WordPress.org, GNU General Public License v2 or later
 Header image by Ian Prince. Source: https://tookapic.com/ianprince/5613-les-dents-du-midi, License: CC0.
 Image used in the documentation: Karolina Grabowska. Source: https://tookapic.com/kaboompics/3311-dead-flower, License: CC0.
 
 Fonts
-Font Awesome by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Font Awesome by @davegandy - https://fontawesome.com - @fontawesome
+License - https://fontawesome.com/license/free 
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
 
-Montserrat
-Julieta Ulanovsky, SIL Open Font License, 1.1
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OLF license applies to all icons
+packaged as web and desktop font files.
+
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
 
 JavaScript
 Keyboard Accessible Dropdown Menus
 Copyright 2013 Amy Hendrix (email : amy@amyhendrix.net), Graham Armfield (email : graham.armfield@coolfields.co.uk)
 License: MIT
 
-Checkbox sanitization
-Copyright (c) 2015, WordPress Theme Review Team
-http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+Sanitization
+Copyright (c) 2015-2018, WordPress Theme Review Team
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
 https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+
+
+CSS
+Blueprint, MIT License, https://github.com/joshuaclayton/blueprint-css/blob/master/LICENSE
+https://github.com/joshuaclayton/blueprint-css
+
+Normalize, MIT License, https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+https://necolas.github.io/normalize.css/

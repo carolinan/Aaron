@@ -2,12 +2,12 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package aaron
+ * @package Aaron
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('frontpage-top'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'frontpage-top' ); ?>>
 	<?php
 	if ( ! aaron_get_meta( 'aaron_replace_title' ) ) {
 		if ( is_page_template( 'templates/sections.php' ) ) {
@@ -31,10 +31,12 @@
 
 		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 		<?php

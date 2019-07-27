@@ -2,7 +2,7 @@
 /**
  * Custom template tags for this theme.
  *
- * @package aaron
+ * @package Aaron
  */
 
 if ( ! function_exists( 'aaron_posted_on' ) ) {
@@ -22,7 +22,8 @@ if ( ! function_exists( 'aaron_posted_on' ) ) {
 				$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 			}
 
-			$time_string = sprintf( $time_string,
+			$time_string = sprintf(
+				$time_string,
 				esc_attr( get_the_date( 'c' ) ),
 				esc_html( get_the_date() ),
 				esc_attr( get_the_modified_date( 'c' ) ),
@@ -31,7 +32,9 @@ if ( ! function_exists( 'aaron_posted_on' ) ) {
 			echo get_avatar( get_the_author_meta( 'ID' ), 30 );
 
 			$posted_on = sprintf(
-			_x( 'on %s', 'post date', 'aaron' ), $time_string);
+				_x( 'on %s', 'post date', 'aaron' ),
+				$time_string
+			);
 
 			$byline = '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>';
 
@@ -40,8 +43,6 @@ if ( ! function_exists( 'aaron_posted_on' ) ) {
 		echo '</div><!-- .entry-meta -->';
 	}
 }
-
-
 
 if ( ! function_exists( 'aaron_entry_footer' ) ) {
 
@@ -55,15 +56,15 @@ if ( ! function_exists( 'aaron_entry_footer' ) ) {
 			// Hide category and tag text for pages.
 			if ( 'post' === get_post_type() ) {
 
-				/* translators: used between list items, there is a space after the comma */
 				$categories_list = get_the_category_list( esc_html__( ', ', 'aaron' ) );
 				if ( $categories_list ) {
+					/* translators: used between list items, there is a space after the comma */
 					printf( '<span class="cat-links"><i aria-hidden="true"></i>' . esc_html__( 'Categories: %1$s', 'aaron' ) . '</span>', $categories_list );
 				}
 
-				/* translators: used between list items, there is a space after the comma */
 				$tags_list = get_the_tag_list( '', esc_html__( ', ', 'aaron' ) );
 				if ( $tags_list ) {
+					/* translators: used between list items, there is a space after the comma */
 					printf( '<span class="tags-links"><i aria-hidden="true"></i> ' . esc_html__( 'Tags: %1$s', 'aaron' ) . '</span>', $tags_list );
 				}
 			}
@@ -84,8 +85,8 @@ if ( ! function_exists( 'aaron_entry_footer' ) ) {
 
 			/* Display jetpack's like  if it's active */
 			if ( class_exists( 'Jetpack_Likes' ) ) {
-			    $aaron_custom_likes = new Jetpack_Likes;
-			    echo $aaron_custom_likes->post_likes( '' );
+				$aaron_custom_likes = new Jetpack_Likes();
+				echo $aaron_custom_likes->post_likes( '' );
 			}
 			echo '</footer><!-- .entry-footer -->';
 		}
@@ -104,10 +105,10 @@ if ( ! function_exists( 'aaron_portfolio_footer' ) ) {
 
 			global $post;
 
-			echo '<a href="' . esc_url( home_url( '/portfolio/' ) ) . '"><b>' . esc_html__( 'Portfolio','aaron' ) . '</b></a><br/><br/>';
-			echo the_terms( $post->ID, 'jetpack-portfolio-type', '<span class="jetpack-portfolio-type"><i aria-hidden="true"></i>' . esc_html__( 'Project Type: ','aaron' ) ,', ', '</span>' );
+			echo '<a href="' . esc_url( home_url( '/portfolio/' ) ) . '"><b>' . esc_html__( 'Portfolio', 'aaron' ) . '</b></a><br/><br/>';
+			echo the_terms( $post->ID, 'jetpack-portfolio-type', '<span class="jetpack-portfolio-type"><i aria-hidden="true"></i>' . esc_html__( 'Project Type: ', 'aaron' ), ', ', '</span>' );
 
-			echo the_terms( $post->ID, 'jetpack-portfolio-tag', '<span class="tags-links"><i aria-hidden="true"></i>' . esc_html__( 'Project Tags: ', 'aaron' ),', ', '</span>' );
+			echo the_terms( $post->ID, 'jetpack-portfolio-tag', '<span class="tags-links"><i aria-hidden="true"></i>' . esc_html__( 'Project Tags: ', 'aaron' ), ', ', '</span>' );
 
 			/* translators: % is the post title */
 			edit_post_link( sprintf( esc_html__( 'Edit %s', 'aaron' ), get_the_title() ), '<span class="edit-link"><i aria-hidden="true"></i>', '</span>' );
@@ -119,36 +120,57 @@ if ( ! function_exists( 'aaron_portfolio_footer' ) ) {
 
 			/* Display jetpack's like  if it's active */
 			if ( class_exists( 'Jetpack_Likes' ) ) {
-			    $aaron_custom_likes = new Jetpack_Likes;
-			    echo $aaron_custom_likes->post_likes( '' );
+				$aaron_custom_likes = new Jetpack_Likes();
+				echo $aaron_custom_likes->post_likes( '' );
 			}
 			echo '</footer><!-- .entry-footer -->';
 		}
 	}
 }
 
-
-add_filter( 'excerpt_more', 'aaron_excerpt_more',100 );
+/**
+ * Adds the "continue reading" text string for excerpts that uses the more quicktag.
+ *
+ * @param string $more Continue reading.
+ */
 function aaron_excerpt_more( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
+
 	global $id;
 	return '&hellip; ' . aaron_continue_reading( $id );
 }
+add_filter( 'excerpt_more', 'aaron_excerpt_more', 100 );
 
-add_filter( 'get_the_excerpt', 'aaron_custom_excerpt_more',100 );
+/**
+ * Adds the "continue reading" text string for excerpts.
+ *
+ * @param string $output Continue reading.
+ */
 function aaron_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
+	if ( has_excerpt() && ! is_attachment() && ! is_admin() ) {
 		global $id;
 		$output .= ' ' . aaron_continue_reading( $id );
 	}
 	return $output;
 }
+add_filter( 'get_the_excerpt', 'aaron_custom_excerpt_more', 100 );
 
+/**
+ * The "continue reading" text string and post link.
+ *
+ * @param int $id post id.
+ */
 function aaron_continue_reading( $id ) {
+	/* translators: %s: post title */
 	return '<a class="more-link" href="' . esc_url( get_permalink( $id ) ) . '">' . sprintf( esc_html__( 'Continue Reading %s', 'aaron' ), get_the_title( $id ) ) . '</a>';
 }
 
 if ( ! function_exists( 'aaron_breadcrumbs' ) ) {
-
+	/**
+	 * Adds a simplified bredcrumb with links to the home page and category page.
+	 */
 	function aaron_breadcrumbs() {
 		if ( get_theme_mod( 'aaron_breadcrumb' ) ) {
 			?>
@@ -174,3 +196,5 @@ if ( ! function_exists( 'aaron_breadcrumbs' ) ) {
 		}
 	}
 }
+
+

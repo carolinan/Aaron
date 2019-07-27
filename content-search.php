@@ -2,13 +2,12 @@
 /**
  * The template part for displaying results in search pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @link Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package aaron
+ * @package Aaron
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'aaron-border' ); ?>>
 	<header class="entry-header">
 		<?php

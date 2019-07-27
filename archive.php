@@ -2,9 +2,9 @@
 /**
  * The template for displaying archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @link Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package aaron
+ * @package Aaron
  */
 
 get_header();
@@ -13,18 +13,21 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 	if ( have_posts() ) : ?>
 		<section class="featured-wrap">
 			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Portfolio','aaron' ); ?></h1>
+				<h1 class="page-title"><?php esc_html_e( 'Portfolio', 'aaron' ); ?></h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
 					<div class="featured-post aaron-border">
 					<?php
 					if ( has_post_thumbnail() ) {
 						the_post_thumbnail( 'aaron-featured-posts-thumb' );
 					}
 					the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-					echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-type-links">',', ','</span>' );
+					echo get_the_term_list( $post->ID, 'jetpack-portfolio-type', '<span class="portfolio-type-links">', ', ', '</span>' );
 					?>
 					</div>
 				<?php endwhile; ?>
@@ -33,7 +36,8 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 	endif;
 	get_footer();
 
-} else { ?>
+} else {
+	?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -46,7 +50,10 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 				?>
 			</header><!-- .page-header -->
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php
 

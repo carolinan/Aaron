@@ -2,53 +2,52 @@
 The stylesheet for the documentation / Setup up help page.
 */
 
-.doc-box{
-	width:75%;
-	border-radius:4px; 
-	padding:3px 26px 26px 26px; 
+.doc-box {
+	width: 75%;
+	border-radius: 4px; 
+	padding: 3px 26px 26px 26px; 
 	display: block;
-	position:relative;
+	position: relative;
 	overflow: auto;
 	box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
-	margin:0 0 45px 0;
+	margin: 0 0 45px 0;
 	background:#fcfcfc;
-	line-height:1.8;
-	font-size:14px;
+	line-height :1.8;
+	font-size: 14px;
 
 }
 
-.doc-title{
-	font-size:20px;
-	font-size:2.0rem; 
-	text-decoration:none;
-	margin:50px 0 20px 0;
+.doc-title {
+	font-size: 20px;
+	font-size: 2.0rem; 
+	text-decoration: none;
+	margin: 50px 0 20px 0;
 	font-family: 'Montserrat', sans-serif;	
 	letter-spacing: 2px; 
 }
 
-.doc-thanks{
-	margin:0;
-	line-height:1.8;
-	font-size:16px;
+.doc-thanks {
+	margin: 0;
+	line-height :1.8;
+	font-size: 16px;
 }
 
-.doc-menu{
-	width:75%;
+.doc-menu {
+	width: 75%;
 	display: inline-block;
 	background: #ffffff; 
-	box-shadow:0 2px 6px 0 rgba(0, 0, 0, 0.09);
-	padding:26px;
-	font-size:14px;
-	font-size:1.4rem;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.09);
+	padding: 26px;
+	font-size: 16px;
 	font-family: 'Montserrat', sans-serif;	
-	z-index:99; 
-	height:auto;
+	z-index: 99; 
+	height: auto;
 }
 
 .doc-menu ul {	
 	background:#fff;
 	list-style: none;
-	margin:auto;
+	margin: auto;
 	width: 100%;
 }
 
@@ -57,20 +56,25 @@ The stylesheet for the documentation / Setup up help page.
 	position: relative;
 }
 
-.doc-menu a{
+.doc-menu a {
 	display: block;
 	margin-right: 0.1em;
 	margin-left: 0.1em;
-	padding:4px;
+	padding: 4px;
 }
 
 .doc-box a:hover,
 .doc-thanks a:hover,
-.doc-menu a:hover{
-	text-decoration:none;
+.doc-menu a:hover {
+	text-decoration: none;
 	color:#000;
 }
 
-.doc-box ul{
+.doc-box ul {
 	margin-left: 15px;
+}
+
+.doc-box .button-hero:focus,
+.doc-box .button-hero:hover {
+	text-decoration: underline;
 }

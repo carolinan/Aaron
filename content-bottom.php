@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package aaron
+ * @package Aaron
  */
 
 ?>
@@ -31,10 +31,12 @@
 
 		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 		<?php
