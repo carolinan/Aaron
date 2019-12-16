@@ -3,7 +3,6 @@
  * Custom Header feature
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
- * @link https://codex.wordpress.org/Custom_Headers
  *
  * @package Aaron
  */

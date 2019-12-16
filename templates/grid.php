@@ -22,7 +22,7 @@ get_header(); ?>
 			$grid_query = new WP_Query( $args );
 
 			if ( $grid_query->have_posts() ) {
-				while ( $grid_query->have_posts() ) :
+				while ( $grid_query->have_posts() ) {
 					$grid_query->the_post();
 					echo '<div class="grid-item featured-post aaron-border">';
 					if ( has_post_thumbnail() ) {
@@ -31,7 +31,7 @@ get_header(); ?>
 					the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
 					echo '</div>';
 
-				endwhile;
+				}
 				wp_reset_postdata();
 			}
 			?>

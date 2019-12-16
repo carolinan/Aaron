@@ -34,8 +34,6 @@
 		} );
 	} );
 
-
-
 	wp.customize( 'aaron_hide_search', function( value ) {
 		value.bind( function( newval ) {
 			if( true === newval ){
@@ -53,17 +51,23 @@
 			}else{
 				$( '.toptitle' ).css( 'display', 'initial' );
 			}
-
 		});
-
 	} );
 
+	wp.customize( 'aaron_menu_logo', function (value) {
+		value.bind( function( newval ) {
+			if( true === newval ){
+				$( '.toplogo' ).css( 'display', 'initial' );
+			}else{
+				$( '.toplogo' ).css( 'display', 'hide' );
+			}
+		});
+	} );
 
 	wp.customize( 'aaron_featured_headline', function( value ) {
 		value.bind( function( to ) {
 			$( '.featured-headline' ).text( to );
 		} );
 	} );
-
 
 } )( jQuery );

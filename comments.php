@@ -19,10 +19,9 @@ if ( post_password_required() ) {
 ?>
 
 <div id="comments" class="comments-area">
-
-	<?php // You can start editing here -- including this comment! ?>
-
-	<?php if ( have_comments() ) : ?>
+	<?php
+	if ( have_comments() ) {
+		?>
 		<h2 class="comments-title">
 			<?php
 			$comments_number = get_comments_number();
@@ -60,17 +59,17 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php the_comments_navigation(); ?>
+		<?php
+		the_comments_navigation();
 
-	<?php endif; ?>
+	}
 
-	<?php
 	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && '0' !== get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	if ( ! comments_open() && '0' !== get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) {
 		?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'aaron' ); ?></p>
 		<?php
-	endif;
+	}
 
 	comment_form();
 	?>

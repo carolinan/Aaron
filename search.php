@@ -22,21 +22,18 @@ get_header(); ?>
 				</h1>
 			</header><!-- .page-header -->
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
+			<?php
+			/* Start the Loop */
+			while ( have_posts() ) {
+				the_post();
 				/**
 				 * Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
 				get_template_part( 'content', 'search' );
-				?>
+			}
 
-			<?php endwhile; ?>
-
-			<?php
 			the_posts_navigation(
 				array(
 					'prev_text' => __( 'Previous page', 'aaron' ),

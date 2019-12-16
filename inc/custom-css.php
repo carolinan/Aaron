@@ -38,18 +38,13 @@ function aaron_customize_css() {
 	}
 
 	// Call to Action text color.
-	if ( get_theme_mod( 'aaron_action_color' ) ) {
-		echo '#action, #action a { color:' . esc_attr( get_theme_mod( 'aaron_action_color', '#ffffff' ) ) . "; }\n";
-	}
-
-	// If the Call to action text color is black, turn off the text shadow, or the text will be too blurry.
-	if ( get_theme_mod( 'aaron_action_color' ) === '#000000' ) {
-		echo "#action, #action a {text-shadow: none;} \n";
+	if ( get_theme_mod( 'aaron_action_color', '#000' ) ) {
+		echo '#action, #action a { color:' . esc_attr( get_theme_mod( 'aaron_action_color', '#000' ) ) . "; }\n";
 	}
 
 	// Call to Action background color.
-	if ( get_theme_mod( 'aaron_action_bgcolor' ) ) {
-		echo '#action, #action a { background:#' . esc_attr( get_theme_mod( 'aaron_action_bgcolor', 'none' ) ) . "; }\n";
+	if ( get_theme_mod( 'aaron_action_bgcolor', 'fff' ) ) {
+		echo '#action, #action a { background:#' . esc_attr( get_theme_mod( 'aaron_action_bgcolor', 'fff' ) ) . "; }\n";
 	}
 
 	// Header menu and site footer background color.

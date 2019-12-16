@@ -16,12 +16,13 @@ aaron_jetpack_featured_posts();
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+
 		<?php
 		aaron_top_sections();
 
 		/* This is the end of our top page section. Now lets show the latest posts: */
-		if ( have_posts() ) :
-			while ( have_posts() ) :
+		if ( have_posts() ) {
+			while ( have_posts() ) {
 				the_post();
 
 				/*
@@ -30,12 +31,12 @@ aaron_jetpack_featured_posts();
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				get_template_part( 'content', get_post_format() );
-			endwhile;
+			}
 			the_posts_navigation();
-		else :
+		} else {
 			get_template_part( 'content', 'none' );
 
-		endif;
+		}
 
 		aaron_bottom_sections();
 		?>

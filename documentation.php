@@ -55,10 +55,15 @@ function aaron_docs() {
 		href="<?php echo esc_url( '#aaron-support' ); ?>">
 		<?php esc_html_e( 'Ask for Support', 'aaron' ); ?>
 		</a>
+	</div>
 
-		<a class="button button-medium button-hero load-customize" style="margin:15px 5px;"
-		href="<?php echo esc_url( '#aaron-custom' ); ?>">
-		<?php esc_html_e( 'Or find out how to order customizations', 'aaron' ); ?></a>
+	<div class="doc-box">
+		<h3><?php esc_html_e( '4.3 Update Notice', 'aaron' ); ?></h3>
+		<?php esc_html_e( 'In version 4.3, several options in the customizer has moved into their own sections under the Advanced settings panel.', 'aaron' ); ?>
+		<br>
+		<?php esc_html_e( 'The default colors of the Call to Action has been updated to improve accessibility.', 'aaron' ); ?>
+		<br>
+		<?php esc_html_e( 'Added an option to include a small version of the logo in the menu.', 'aaron' ); ?>
 	</div>
 
 	<ul class="doc-menu">
@@ -72,7 +77,6 @@ function aaron_docs() {
 		<li><a href="#aaron-plugins"><?php esc_html_e( 'Plugins', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-support"><?php esc_html_e( 'Support', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-change"><?php esc_html_e( 'Changelog', 'aaron' ); ?></a></li>
-		<li><a href="#aaron-custom"><?php esc_html_e( 'Customizations', 'aaron' ); ?></a></li>
 	</ul>
 
 	<div class="doc-box" id="aaron-menus">
@@ -116,7 +120,13 @@ function aaron_docs() {
 		</i>
 		<br><br>
 		<b><?php esc_html_e( 'Advanced', 'aaron' ); ?></b><br>
-		<?php esc_html_e( 'By default, the primary menu also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.	You can edit these features under the Advanced settings tab in the Customizer.', 'aaron' ); ?>
+		<?php
+		esc_html_e( 'By default, the primary menu also shows the site title and a search form. The search form is not visible on screens smaller than 800 pixels.', 'aaron' );
+		echo '<br>';
+		esc_html_e( 'And if you have selected a custom logo, you can show a smaller version of the logo in the menu.', 'aaron' );
+		echo '<br>';
+		esc_html_e( 'You can edit these features under the Advanced settings tab in the Customizer.', 'aaron' );
+		?>
 	</div>
 
 	<div class="doc-box" id="aaron-widgets">
@@ -364,8 +374,10 @@ function aaron_docs() {
 		printf(
 			/* translators: %s: A link to the themes author URI */
 			__( 'If you need more advanced customizations, <a href="%s">you can also email me to check my availability</a>.', 'aaron' ),
-			esc_url( 'mailto:carolina@theme.tips' )
+			esc_url( 'mailto:carolina@themesbycarolina.com' )
 		);
+		echo '<br><br>';
+		esc_html_e( 'I would love to see what you have built with Aaron! If you would like me to link to your website as an example, email me. ', 'aaron' );
 		?>
 		<br><br>
 	</div>
@@ -373,38 +385,6 @@ function aaron_docs() {
 	<div class="doc-box" id="aaron-change">
 		<h3><?php esc_html_e( 'Changelog', 'aaron' ); ?></h3>
 		<?php esc_html_e( 'The changelog is available in the readme.txt file in your theme folder.', 'aaron' ); ?><br><br>
-	</div>
-
-	<div class="doc-box" id="aaron-custom">
-		<h3><?php esc_html_e( 'Customization', 'aaron' ); ?></h3>
-		<?php esc_html_e( 'If you need further customizations, I am now offering 5 customizations for only 5$ (USD).', 'aaron' ); ?>
-		<br>
-		<?php
-		esc_html_e( 'I will do five customizations of any of my free themes that are available on WordPress.org.', 'aaron' );
-		echo '<br>';
-		esc_html_e( 'This is an opportunity for you who have already selected one of my themes to make it yours and personalize it.', 'aaron' );
-		echo '<br><br>';
-		echo __( 'These customizations can include for example:<br>
-		Color changes.<br>
-		Typography like font sizes, font family, uppercase / lowercase.<br>
-		Changing position of content, sections and any other elements.<br>
-		Adding new sections or features, for example extra frontpage templates that you would like.<br>
-		Changing texts that are part of the theme.<br>
-		Custom login pages.<br>
-		Custom 404 pages.', 'aaron' );
-		echo '<br><br>';
-		esc_html_e( 'If you are not sure if the customization you are wondering about is possible- ask! :)', 'aaron' );
-		echo '<br>';
-		esc_html_e( 'To future proof your changes, I will add the customizations to a child theme.', 'aaron' );
-		echo '<br>';
-		esc_html_e( '-If you are already using a child theme, then I will create a new child theme for you that includes any changes that you have already made.', 'aaron' );
-		?>
-		<br><br>
-		<a class="button button-primary button-hero load-customize"
-		href="<?php echo esc_url( 'https://www.fiverr.com/carolinapoena/customize-my-themes-for-you' ); ?>">
-		<?php esc_html_e( 'Find out more or order customizations', 'aaron' ); ?>
-		</a>
-		<br><br>
 	</div>
 	<?php
 }

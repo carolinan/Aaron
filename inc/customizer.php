@@ -71,7 +71,7 @@ function aaron_customize_register( $wp_customize ) {
 					<?php $this->link(); checked( $this->value(), 'dashicons-wordpress-alt' ); ?> />
 					<i class="dashicons dashicons-wordpress-alt"></i> <?php esc_html_e( 'WordPress', 'aaron' ); ?>
 				</label>
-				<label>				
+				<label>
 					<input type="radio" value="dashicons-admin-plugins" name="<?php echo esc_attr( $this->id ); ?>" 
 					<?php $this->link(); checked( $this->value(), 'dashicons-admin-plugins' ); ?> />
 					<i class="dashicons dashicons-admin-plugins"></i> <?php esc_html_e( 'Plugins', 'aaron' ); ?>
@@ -185,11 +185,65 @@ function aaron_customize_register( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_section(
-		'aaron_section_advanced',
+	$wp_customize->add_panel(
+		'aaron_panel_advanced',
 		array(
 			'title'    => __( 'Advanced settings', 'aaron' ),
 			'priority' => 100,
+		)
+	);
+
+	$wp_customize->add_section(
+		'aaron_section_menu',
+		array(
+			'title'    => __( 'Menu settings', 'aaron' ),
+			'priority' => 100,
+			'panel'    => 'aaron_panel_advanced',
+		)
+	);
+
+	$wp_customize->add_section(
+		'aaron_section_layout',
+		array(
+			'title'    => __( 'Layout', 'aaron' ),
+			'priority' => 100,
+			'panel'    => 'aaron_panel_advanced',
+		)
+	);
+
+	$wp_customize->add_section(
+		'aaron_section_blog',
+		array(
+			'title'    => __( 'Blog & Archive settings', 'aaron' ),
+			'priority' => 100,
+			'panel'    => 'aaron_panel_advanced',
+		)
+	);
+
+	$wp_customize->add_section(
+		'aaron_section_posts',
+		array(
+			'title'    => __( 'Post settings', 'aaron' ),
+			'priority' => 100,
+			'panel'    => 'aaron_panel_advanced',
+		)
+	);
+
+	$wp_customize->add_section(
+		'aaron_section_menu',
+		array(
+			'title'    => __( 'Menu settings', 'aaron' ),
+			'priority' => 10,
+			'panel'    => 'aaron_panel_advanced',
+		)
+	);
+
+	$wp_customize->add_section(
+		'aaron_section_footer',
+		array(
+			'title'    => __( 'Footer settings', 'aaron' ),
+			'priority' => 110,
+			'panel'    => 'aaron_panel_advanced',
 		)
 	);
 
@@ -198,6 +252,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'title'    => __( 'Accessibility settings', 'aaron' ),
 			'priority' => 100,
+			'panel'    => 'aaron_panel_advanced',
 		)
 	);
 
@@ -301,10 +356,10 @@ function aaron_customize_register( $wp_customize ) {
 			$wp_customize,
 			'aaron_header_bgcolor',
 			array(
-				'label'    => __( 'Header background color', 'aaron' ),
-				'description'    => __( 'Used when no header image is selected.', 'aaron' ),
-				'section'  => 'colors',
-				'settings' => 'aaron_header_bgcolor',
+				'label'       => __( 'Header background color', 'aaron' ),
+				'description' => __( 'Used when no header image is selected.', 'aaron' ),
+				'section'     => 'colors',
+				'settings'    => 'aaron_header_bgcolor',
 			)
 		)
 	);
@@ -395,7 +450,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to show the excerpt instead of the full content on the front page, blog listing and archives.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_blog',
 		)
 	);
 
@@ -412,7 +467,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to hide the meta information on the search results.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_blog',
 		)
 	);
 
@@ -429,7 +484,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to hide all the meta information.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_blog',
 		)
 	);
 
@@ -455,7 +510,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to hide the author and post date information.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_blog',
 		)
 	);
 
@@ -480,7 +535,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to show the breadcrumb navigation.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_blog',
 		)
 	);
 
@@ -661,7 +716,7 @@ function aaron_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			'aaron_highlight' . $i . '_target',
 			array(
-				'sanitize_callback' => 'aaron_sanitize_checkbox'
+				'sanitize_callback' => 'aaron_sanitize_checkbox',
 			)
 		);
 
@@ -699,7 +754,7 @@ function aaron_customize_register( $wp_customize ) {
 				'render_callback'     => 'aaron_highlights',
 			)
 		);
-	} // End for().
+	}
 
 	$wp_customize->add_section(
 		'aaron_section_hide',
@@ -795,7 +850,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_action_color',
 		array(
-			'default'           => '#ffffff',
+			'default'           => '#000',
 			'sanitize_callback' => 'sanitize_hex_color',
 		)
 	);
@@ -815,7 +870,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_action_bgcolor',
 		array(
-			'default'           => '',
+			'default'           => 'fff',
 			'sanitize_callback' => 'sanitize_hex_color_no_hash',
 		)
 	);
@@ -845,7 +900,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to hide the search form in the header menu.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_menu',
 		)
 	);
 
@@ -861,7 +916,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'The search form in the header menu is hidden on smaller screens by default. Check this box to show it on all screen sizes.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_menu',
 		)
 	);
 
@@ -877,7 +932,24 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to hide the clickable site title in the header menu.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_menu',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'aaron_menu_logo',
+		array(
+			'sanitize_callback' => 'aaron_sanitize_checkbox',
+			'default'           => false,
+		)
+	);
+
+	$wp_customize->add_control(
+		'aaron_menu_logo',
+		array(
+			'type'    => 'checkbox',
+			'label'   => __( 'Check this box to show a small version of the logo in the header menu.', 'aaron' ),
+			'section' => 'aaron_section_menu',
 		)
 	);
 
@@ -893,7 +965,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to unstick the fixed header menu.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_menu',
 		)
 	);
 
@@ -909,7 +981,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to move the meta information below the post content.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_blog',
 		)
 	);
 
@@ -925,7 +997,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Check this box to hide the Theme Author credit in the footer =(.', 'aaron' ),
-			'section' => 'aaron_section_advanced',
+			'section' => 'aaron_section_footer',
 		)
 	);
 
@@ -942,7 +1014,7 @@ function aaron_customize_register( $wp_customize ) {
 		array(
 			'type'        => 'range',
 			'label'       => __( 'Change the width of the main content.', 'aaron' ),
-			'section'     => 'aaron_section_advanced',
+			'section'     => 'aaron_section_layout',
 			'input_attrs' => array(
 				'min'  => 30,
 				'max'  => 100,
@@ -1026,7 +1098,7 @@ function aaron_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			'aaron_bottom_section' . $i,
 			array(
-				'sanitize_callback' => 'aaron_sanitize_select',
+				'sanitize_callback' => 'aaron_sanitize_page',
 			)
 		);
 
@@ -1113,6 +1185,7 @@ function aaron_customize_register( $wp_customize ) {
 			'title'       => __( 'Typography', 'aaron' ),
 			'description' => __( 'Changing the fonts can affect accessibility.', 'aaron' ),
 			'priority'    => 100,
+			'panel'       => 'aaron_panel_advanced',
 		)
 	);
 
@@ -1230,6 +1303,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
 	$wp_customize->get_setting( 'aaron_hide_search' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'aaron_hide_title' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'aaron_menu_logo' )->transport   = 'postMessage';
 
 	if ( aaron_has_featured_posts( 1 ) ) {
 		$wp_customize->get_setting( 'aaron_featured_headline' )->transport = 'postMessage';

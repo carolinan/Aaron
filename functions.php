@@ -137,6 +137,25 @@ if ( ! get_theme_mod( 'aaron_hide_title' ) ) {
 	add_filter( 'wp_nav_menu_items', 'aaron_menu_title', 10, 2 );
 }
 
+if ( get_theme_mod( 'aaron_menu_logo', false ) === true ) {
+	/**
+	 * Show a small version of the logo in the menu.
+	 */
+	function aaron_menu_logo( $items, $args ) {
+		if ( 'header' === $args->theme_location && has_custom_logo() ) {
+			$image = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ) );
+			$new_item    = array( '<li class="toplogo"><a href="' . esc_url( home_url( '/' ) ) . '" class="custom-logo-link" rel="home">
+			<img src="' . $image[0] . '" width="40px" alt="" class="custom-logo"></a></li>', );
+			$items       = preg_replace( '/<\/li>\s<li/', '</li>,<li', $items );
+			$array_items = explode( ',', $items );
+			array_splice( $array_items, 0, 0, $new_item );
+			$items = implode( '', $array_items );
+		}
+		return $items;
+	}
+	add_filter( 'wp_nav_menu_items', 'aaron_menu_logo', 10, 2 );
+}
+
 /**
  * Register widget areas.
  *
@@ -439,10 +458,10 @@ if ( ! function_exists( 'aaron_top_sections' ) ) {
 				$top_section_query = new WP_Query( $args );
 
 				if ( $top_section_query->have_posts() ) {
-					while ( $top_section_query->have_posts() ) :
+					while ( $top_section_query->have_posts() ) {
 						$top_section_query->the_post();
 						get_template_part( 'content', 'top' );
-					endwhile;
+					}
 					wp_reset_postdata();
 				}
 			}
@@ -475,10 +494,10 @@ if ( ! function_exists( 'aaron_bottom_sections' ) ) {
 				$bottom_section_query = new WP_Query( $args );
 
 				if ( $bottom_section_query->have_posts() ) {
-					while ( $bottom_section_query->have_posts() ) :
+					while ( $bottom_section_query->have_posts() ) {
 						$bottom_section_query->the_post();
 						get_template_part( 'content', 'bottom' );
-					endwhile;
+					}
 					wp_reset_postdata();
 				}
 			}

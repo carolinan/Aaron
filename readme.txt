@@ -2,7 +2,7 @@
 Contributors: Poena
 Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, accessibility-ready, custom-header, custom-logo
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.3
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,6 +27,19 @@ Please note that changing the colors of the theme can affect accessibility.
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Change log ==
+
+Version 4.3, 2019-12-16
+Solved a critical problem with the bottom page section for the front page.
+Split the advanced settings panel into several panels because it was becoming too large
+and difficult to navigate.
+Added an option to include a small version of the logo in the menu.
+Updated the default colors of the Call to Action to improve accessibility.
+
+Version 4.2, 2019-07-27
+Added wp_body_open to the blank template.
+Minor improvements to the color contrast.
+Minor changes to the documentation page.
+Changed author URI.
 
 Version 4.1, 2019-05-08
 Fixed a problem with a broken link to font awesome in style.css and rtl.css

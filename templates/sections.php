@@ -26,18 +26,18 @@ get_header(); ?>
 				$top_section_query = new WP_Query( $args );
 
 				if ( $top_section_query->have_posts() ) {
-					while ( $top_section_query->have_posts() ) :
+					while ( $top_section_query->have_posts() ) {
 						$top_section_query->the_post();
 						get_template_part( 'content', 'page' );
-					endwhile;
+					}
 					wp_reset_postdata();
 				}
 			}
 			/* This is the end of our top page section. Now lets show the latest posts: */
-			while ( have_posts() ) :
+			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'content', 'section' );
-			endwhile;
+			}
 
 			/*
 			 * We have finished printing the latest posts. Check if there are bottom section pages to show:
@@ -57,10 +57,10 @@ get_header(); ?>
 				$bottom_section_query = new WP_Query( $args );
 
 				if ( $bottom_section_query->have_posts() ) {
-					while ( $bottom_section_query->have_posts() ) :
+					while ( $bottom_section_query->have_posts() ) {
 						$bottom_section_query->the_post();
 						get_template_part( 'content', 'page' );
-					endwhile;
+					}
 					wp_reset_postdata();
 				}
 			}

@@ -13,7 +13,7 @@ aaron_jetpack_featured_posts();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php
-			while ( have_posts() ) :
+			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'content', 'page' );
 
@@ -21,7 +21,7 @@ aaron_jetpack_featured_posts();
 				if ( comments_open() ) {
 					comments_template();
 				}
-			endwhile;
+			}
 			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

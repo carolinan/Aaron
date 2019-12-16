@@ -13,21 +13,16 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		while ( have_posts() ) :
+		while ( have_posts() ) {
 			the_post();
-			?>
-
-			<?php get_template_part( 'content', 'portfolio-single' ); ?>
-
-			<?php the_post_navigation(); ?>
-
-			<?php
+			get_template_part( 'content', 'portfolio-single' );
+			the_post_navigation();
 			// If comments are open, load up the comment template.
 			if ( comments_open() ) {
 				comments_template();
 			}
-			?>
-		<?php endwhile; ?>
+		}
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
